@@ -1,7 +1,7 @@
-// Map Tests
-// =========
+// Utility Tests
+// =============
 
-@include test-module('Map Helpers') {
+@include test-module('Utility Helpers') {
   $map: (
     one: (
       hello: (
@@ -12,6 +12,20 @@
     ),
     two: cheese,
   );
+
+  // String Replace
+  // --------------
+  @include test('str-replace') {
+    $test: _susy-str-replace('hello terrible world!', 'terrible', 'beautiful');
+    $expect: 'hello beautiful world!';
+    @include assert-equal($test, $expect,
+      'Substring should be replaced within larger string.');
+
+    $test: _susy-str-replace('hello', 'hello', 'world');
+    $expect: 'world';
+    @include assert-equal($test, $expect,
+      'Entire string should be replaced.');
+  }
 
   // Truncate List
   // -------------

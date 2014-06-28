@@ -1,6 +1,7 @@
 // Container Syntax
 // ================
 
+
 // Container [mixin]
 // -----------------
 // Set a container element
@@ -8,38 +9,27 @@
 @mixin container(
   $layout: $susy
 ) {
-  $layout     : parse-grid($layout);
+  $layout: parse-grid($layout);
 
-  $_width     : get-container-width($layout);
-  $_justify   : parse-container-position(susy-get(container-position, $layout));
-  $_property  : if(susy-get(math, $layout) == static, width, max-width);
+  $_justify: parse-container-position(susy-get(container-position, $layout));
+  $_property: if(susy-get(math, $layout) == static, width, max-width);
 
-  $_box       : susy-get(box-sizing, $layout);
+  $_output: map-merge((
+    clearfix: true,
+    box-sizing: susy-get(box-sizing, $layout),
+    $_property: container($layout),
+  ), $_justify);
 
-  @if $_box {
-    @include output((box-sizing: $_box));
-  }
-
-  @include float-container($_width, $_justify, $_property);
+  @include render($_output, susy-get(flow, $layout));
   @include show-grid($layout);
 }
+
 
 // Container [function]
 // --------------------
 // Return container width
 // - [$layout]  : <settings>
 @function container(
-  $layout: $susy
-) {
-  $layout: parse-grid($layout);
-  @return get-container-width($layout);
-}
-
-// Get Container Width
-// -------------------
-// Calculate the container width
-// - [$layout]: <settings>
-@function get-container-width(
   $layout: $susy
 ) {
   $layout         : parse-grid($layout);
@@ -61,6 +51,7 @@
   @return $_width;
 }
 
+
 // Parse Container Position
 // ------------------------
 // Parse the $container-position into margin values.
@@ -74,6 +65,11 @@
     $_return: nth($justify, 1);
     $_return: $_return if(length($justify) > 1, nth($justify, 2), $_return);
   }
+
+  $_return: (
+    margin-_from_: nth($_return, 1),
+    margin-_to_: nth($_return, 2),
+  );
 
   @return $_return;
 }

@@ -6,7 +6,7 @@
 // -----
 // Apply to any element that should force a line break.
 @mixin break {
-  @include output((clear: both));
+  @include render((clear: both));
 }
 
 
@@ -14,7 +14,7 @@
 // -------
 // Cancel the break() effect, e.g. when using media queries.
 @mixin nobreak {
-  @include output((clear: none));
+  @include render((clear: none));
 }
 
 

@@ -1,0 +1,92 @@
+// Direction Helpers
+// =================
+
+// Susy Flow Defaults
+// ------------------
+// - PRIVATE
+@include susy-defaults((
+  flow: ltr,
+));
+
+
+// Map Orient
+// ----------
+// - Return a map with to/from orientations set based on flow
+@function map-orient(
+  $output,
+  $flow
+) {
+  $return: ();
+
+  @each $prop, $val in $output {
+    $prop: orient($prop, $flow);
+    $val: orient($val, $flow);
+
+    $return: map-merge($return, ($prop: $val));
+  }
+
+  @return $return;
+}
+
+
+// Orient
+// ------
+// - Return a value with to/from orientations set based on flow
+@function orient(
+  $value,
+  $flow
+) {
+  $to: to($flow);
+  $from: from($flow);
+
+  @if type-of($value) == string {
+    $value: _susy-str-replace($value, _from_, $from);
+    $value: _susy-str-replace($value, _to_, $to);
+  } @else if type-of($value) == list {
+    $new: ();
+    $sep: list-separator($value);
+    @each $item in $value {
+      $item: orient($item, $flow);
+      $new: append($new, $item, $sep);
+    }
+    $value: $new;
+  }
+
+  @return $value;
+}
+
+
+// Get Direction
+// -------------
+// Return the 'from' or 'to' direction of a ltr or rtl flow.
+// - [$flow]  : ltr | rtl
+// - [$key]   : from | to
+@function get-direction(
+  $flow: map-get($susy-defaults, flow),
+  $key: from
+) {
+  $return: if($flow == rtl, (from: right, to: left), (from: left, to: right));
+  @return map-get($return, $key);
+}
+
+
+// To
+// --
+// Return the 'to' direction of a flow
+// - [$flow]  : ltr | rtl
+@function to(
+  $flow: map-get($susy-defaults, flow)
+) {
+  @return get-direction($flow, to);
+}
+
+
+// From
+// ----
+// Return the 'from' direction of a flow
+// - [$flow]  : ltr | rtl
+@function from(
+  $flow: map-get($susy-defaults, flow)
+) {
+  @return get-direction($flow, from);
+}

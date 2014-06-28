@@ -39,6 +39,11 @@
     @include susy-box-sizing($val);
   }
 
+  // Clearfix
+  @else if $prop == clearfix {
+    @include susy-clearfix;
+  }
+
   // Rem Support
   @else {
     @include susy-rem($prop, $val);

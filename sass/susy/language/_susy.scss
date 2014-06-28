@@ -3,7 +3,8 @@
 
 $susy-version: 2.0;
 
-@import "../math";
+@import "../core";
+@import "../render";
 @import "../output/float";
 
 @import "susy/settings";

@@ -1,0 +1,19 @@
+// Render CSS
+// ==========
+
+// Render
+// ------
+// Render CSS with proper browser support.
+// - $styles  : <map of css property-value pairs>
+@mixin render(
+  $output,
+  $flow: false
+) {
+  @if $flow {
+    $output: map-orient($output, $flow);
+  }
+
+  @each $prop, $val in $output {
+    @include susy-support($prop, $val);
+  }
+}

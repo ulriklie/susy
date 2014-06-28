@@ -1,6 +1,7 @@
 // Padding Syntax
 // ==============
 
+
 // Prefix
 // ------
 // Add spanning-padding before an element.
@@ -8,17 +9,22 @@
 @mixin prefix(
   $span
 ) {
-  $span   : map-merge((spread: wide), parse-span($span));
-  $flow   : susy-get(flow, $span);
-  $width  : span($span);
+  $span: map-merge((spread: wide), parse-span($span));
+  $_flow: susy-get(flow, $span);
+  $_width: span($span);
 
   @if is-inside($span) {
-    $gutter: gutter($span);
-    $width: if($gutter and comparable($width, $gutter), $width + $gutter, $width);
+    $_gutter: gutter($span);
+    $_width: if($_gutter and comparable($_width, $_gutter), $_width + $_gutter, $_width);
   }
 
-  @include padding-output($width, null, $flow);
+  $_output: (
+    padding-_from_: $_width,
+  );
+
+  @include render($_output, $_flow);
 }
+
 
 // Suffix
 // ------
@@ -27,17 +33,22 @@
 @mixin suffix(
   $span
 ) {
-  $span   : map-merge((spread: wide), parse-span($span));
-  $flow   : susy-get(flow, $span);
-  $width  : span($span);
+  $span: map-merge((spread: wide), parse-span($span));
+  $_flow: susy-get(flow, $span);
+  $_width: span($span);
 
   @if is-inside($span) {
-    $gutter: gutter($span);
-    $width: if($gutter and comparable($width, $gutter), $width + $gutter, $width);
+    $_gutter: gutter($span);
+    $_width: if($_gutter and comparable($_width, $_gutter), $_width + $_gutter, $_width);
   }
 
-  @include padding-output(null, $width, $flow);
+  $_output: (
+    padding-_to_: $_width,
+  );
+
+  @include render($_output, $_flow);
 }
+
 
 // Pad
 // ---

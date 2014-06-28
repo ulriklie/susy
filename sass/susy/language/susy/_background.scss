@@ -33,19 +33,26 @@ $susy-overlay-grid-head-exists: false;
 @mixin background-grid(
   $grid: $susy
 ) {
-  $_output: get-background($grid);
+  $_data: get-background($grid);
 
-  @if length($_output) > 0 {
+  @if length($_data) > 0 {
     $_flow: susy-get(flow, $grid);
 
     $_image: ();
-    @each $name, $layer in map-get($_output, image) {
+    @each $name, $layer in map-get($_data, image) {
       $_direction: if($name == baseline, to bottom, to to($_flow));
       $_image: append($_image, linear-gradient($_direction, $layer...), comma);
     }
-    $_output: map-merge($_output, (image: $_image));
 
-    @include background-grid-output($_output...);
+    $_output: (
+      background-image: $_image,
+      background-size: map-get($_data, size),
+      background-origin: map-get($_data, clip),
+      background-clip: map-get($_data, clip),
+      background-position: _from_ top,
+    );
+
+    @include render($_output, $_flow);
   }
 }
 
@@ -357,10 +364,6 @@ $susy-overlay-grid-head-exists: false;
         $_return: map-merge($_return, (clip: join($_clip, border-box, comma)));
       }
     }
-  }
-
-  @if map-get($_return, image) {
-    $_return: map-merge($_return, (flow: susy-get(flow, $grid)));
   }
 
   @return $_return;

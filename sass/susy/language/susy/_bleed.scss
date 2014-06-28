@@ -14,7 +14,7 @@
     $output: map-merge((box-sizing: content-box), $output);
   }
 
-  @include output($output);
+  @include render($output);
 }
 
 

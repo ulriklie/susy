@@ -3,9 +3,39 @@
 
 @include test-module('Direction Helpers') {
 
+  // Map Orient
+  // ----------
+  @include test(map-orient) {
+    $map: (
+      background-image: gradient(to _to_, red, blue),
+      float: _from_,
+      margin-_to_: 3em,
+      directions: from _from_,
+    );
+
+    $test: map-orient($map, ltr);
+    $expect: (
+      background-image: gradient(to right, red, blue),
+      float: left,
+      margin-right: 3em,
+      directions: from left,
+    );
+
+    @include assert-equal($test, $expect,
+      'Map should be returned with directions replaced');
+  }
+
+  // Orient
+  // ------
+  @include test(orient) {
+    $test: orient(_from_, ltr);
+    $expect: left;
+    @include assert-equal($test, $expect,
+      'Value should be returned with directions replaced');
+  }
+
   // Get Direction
   // -------------
-
   @include test('[function] get-direction') {
     // ltr to
     $flow: ltr;
@@ -26,7 +56,6 @@
 
   // To
   // --
-
   @include test('[function] to') {
     // ltr
     $to: to(ltr);
@@ -41,9 +70,8 @@
       'The to-direction for "rtl" should be "left".');
   }
 
-  // // From
-  // // ----
-
+  // From
+  // ----
   @include test('[function] from') {
     // ltr
     $from: from(ltr);

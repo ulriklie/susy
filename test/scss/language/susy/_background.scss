@@ -237,7 +237,6 @@
       ),
       size: percentage(1.25/10),
       clip: content-box,
-      flow: ltr,
     );
     @include assert-equal($test, $expect,
       'Return key/values for columns.');
@@ -256,7 +255,6 @@
         baseline: (black 5%, rgba(black, 0) 5%),
       ),
       size: 100% 24px,
-      flow: ltr,
     );
     @include assert-equal($test, $expect,
       'Return key/values for baseline.');
@@ -270,7 +268,6 @@
       ),
       size: (percentage(1.25/10), 100% 24px),
       clip: (content-box, border-box),
-      flow: ltr,
     );
     @include assert-equal($test, $expect,
       'Return key/values for both baseline and columns.');

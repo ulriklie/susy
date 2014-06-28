@@ -8,12 +8,16 @@
 @mixin pre(
   $span
 ) {
-  $span   : map-merge((spread: wide), parse-span($span));
-  $flow   : susy-get(flow, $span);
-  $split  : if(susy-get(gutter-position, $span) == split, true, false);
-  $width  : if($split, span($span) + gutter($span), span($span));
+  $span: map-merge((spread: wide), parse-span($span));
+  $_flow: susy-get(flow, $span);
+  $_split: if(susy-get(gutter-position, $span) == split, true, false);
+  $_width: if($_split, span($span) + gutter($span), span($span));
 
-  @include margin-output($width, null, $flow);
+  $_output: (
+    margin-_from_: $_width,
+  );
+
+  @include render($_output, $_flow);
 }
 
 // Post
@@ -23,12 +27,16 @@
 @mixin post(
   $span
 ) {
-  $span   : map-merge((spread: wide), parse-span($span));
-  $flow   : susy-get(flow, $span);
-  $split  : if(susy-get(gutter-position, $span) == split, true, false);
-  $width  : if($split, span($span) + gutter($span), span($span));
+  $span: map-merge((spread: wide), parse-span($span));
+  $_flow: susy-get(flow, $span);
+  $_split: if(susy-get(gutter-position, $span) == split, true, false);
+  $_width: if($_split, span($span) + gutter($span), span($span));
 
-  @include margin-output(null, $width, $flow);
+  $_output: (
+    margin-_to_: $_width,
+  );
+
+  @include render($_output, $_flow);
 }
 
 // Push
@@ -48,12 +56,16 @@
 @mixin pull(
   $span
 ) {
-  $span   : map-merge((spread: wide), parse-span($span));
-  $flow   : susy-get(flow, $span);
-  $split  : if(susy-get(gutter-position, $span) == split, true, false);
-  $width  : if($split, 0 - span($span) + gutter($span), 0 - span($span));
+  $span: map-merge((spread: wide), parse-span($span));
+  $_flow: susy-get(flow, $span);
+  $_split: if(susy-get(gutter-position, $span) == split, true, false);
+  $_width: if($_split, 0 - span($span) + gutter($span), 0 - span($span));
 
-  @include margin-output($width, null, $flow);
+  $_output: (
+    margin-_from_: $_width,
+  );
+
+  @include render($_output, $_flow);
 }
 
 // Squish

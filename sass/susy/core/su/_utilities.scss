@@ -1,5 +1,5 @@
-// Map Functions
-// =============
+// Utility Functions
+// =================
 
 
 // Truncate List
@@ -18,6 +18,28 @@
   @return $_return;
 }
 
+// String Replace
+// --------------
+// - Return a string, with a substring replaced
+@function _susy-str-replace(
+  $string,
+  $old,
+  $new: ''
+) {
+  $_return: $string;
+  $_i: str-index($string, $old);
+  $_n: str-length($old);
+
+  @if $string == $old {
+    $_return: $new;
+  } @else if $_i {
+    $_a: str-slice($string, 1, $_i - 1);
+    $_z: str-slice($string, $_i + $_n);
+    $_return: $_a + $new + $_z;
+  }
+
+  @return $_return;
+}
 
 // Deep Get
 // --------

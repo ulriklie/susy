@@ -173,15 +173,16 @@ h1 {
 
 /*  
 
-### Map Helpers ------ */
+### Utility Helpers ------ */
+/*  - str-replace (2 Assertions, 2 Passed, 0 Failed) */
 /*  - truncate-list (1 Assertions, 1 Passed, 0 Failed) */
 /*  - deep-get (1 Assertions, 1 Passed, 0 Failed) */
 /*  - deep-set (2 Assertions, 2 Passed, 0 Failed) */
 /*  - deep-merge (1 Assertions, 1 Passed, 0 Failed) */
 /*  - deep-has-key (2 Assertions, 2 Passed, 0 Failed) */
 /*  
-    5 Tests:
-    - 5 Passed
+    6 Tests:
+    - 6 Passed
     - 0 Failed */
 /*  
 
@@ -231,11 +232,11 @@ h1 {
 /*  - [mixin] layout (7 Assertions, 7 Passed, 0 Failed) */
 /*  - [mixin] with-layout (6 Assertions, 6 Passed, 0 Failed) */
 /*  - [function] layout (1 Assertions, 1 Passed, 0 Failed) */
-/*  - FAIL: [function] _get-layout (2 Assertions, 1 Passed, 1 Failed) */
+/*  - [function] _get-layout (2 Assertions, 2 Passed, 0 Failed) */
 /*  
     4 Tests:
-    - 3 Passed
-    - 1 Failed */
+    - 4 Passed
+    - 0 Failed */
 /*  
 
 ### Global Box-Sizing Syntax ------ */
@@ -417,12 +418,11 @@ h1 {
   font-style: italic;
 }
 
-/*  - [function] container (5 Assertions, 5 Passed, 0 Failed) */
-/*  - [function] get-container-width (6 Assertions, 6 Passed, 0 Failed) */
+/*  - [function] container (6 Assertions, 6 Passed, 0 Failed) */
 /*  - [function] parse-container-position() (7 Assertions, 7 Passed, 0 Failed) */
 /*  
-    3 Tests:
-    - 3 Passed
+    2 Tests:
+    - 2 Passed
     - 0 Failed */
 /*  
 
@@ -2171,315 +2171,6 @@ h1 {
     - 0 Failed */
 /*
 
-### Shared Output ------ */
-/* - [mixin] output */
-.test__output .assert__output {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__output .assert__output:before {
-  content: "Property value pairs are passed in as maps and output as CSS.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/*  
-
-### Direction Helpers ------ */
-/*  - [function] get-direction (2 Assertions, 2 Passed, 0 Failed) */
-/*  - [function] to (2 Assertions, 2 Passed, 0 Failed) */
-/*  - [function] from (2 Assertions, 2 Passed, 0 Failed) */
-/*  
-    3 Tests:
-    - 3 Passed
-    - 0 Failed */
-/*
-
-### Grid Background Output ------ */
-/* - [mixin] background-grid-output */
-.test__background-grid-output .assert__show {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__background-grid-output .assert__show .test, .test__background-grid-output .assert__show .expect {
-  padding-top: 48px;
-  padding-top: 3rem;
-  padding-bottom: 48px;
-  padding-bottom: 3rem;
-  background: none;
-}
-
-.test__background-grid-output .assert__show:before {
-  content: "Elements should show a horizontal clipped red-green-blue gradient, and a vertical baseline";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/*
-
-### Shared Container API ------ */
-/* - [mixin] container-output */
-.test__container-output .assert__fluid {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__container-output .assert__fluid:before {
-  content: "Containers should have 60em max-width, centered.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-.test__container-output .assert__static {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__container-output .assert__static:before {
-  content: "Containers should have 30em width, flush right.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-.test__container-output .assert__auto {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__container-output .assert__auto:before {
-  content: "Containers should have 100% width.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/*
-
-### Shared Margin API ------ */
-/* - [mixin] margin-output */
-.test__margin-output .assert__margin-output {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__margin-output .assert__margin-output:before {
-  content: "Elements should have 25% right margin, 8em left.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/*
-
-### Shared Padding API ------ */
-/* - [mixin] padding-output */
-.test__padding-output .assert__padding-output {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__padding-output .assert__padding-output:before {
-  content: "Elements should have 25% right padding, 8em left.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/*
-
-### Prefix Support ------ */
-/* - [mixin] susy-prefix */
-.test__susy-prefix .assert__susy-prefix {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__susy-prefix .assert__susy-prefix:before {
-  content: "Requested prefixes are added to output.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/*
-
-### Background Support ------ */
-/* - [mixin] susy-background-image */
-.test__susy-background-image .assert__susy-background-image {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__susy-background-image .assert__susy-background-image:before {
-  content: "Without Compass, background-image is output directly.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/* - [mixin] susy-background-size */
-.test__susy-background-size .assert__susy-background-size {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__susy-background-size .assert__susy-background-size:before {
-  content: "Without Compass, background-size is output directly.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/* - [mixin] susy-background-origin */
-.test__susy-background-origin .assert__susy-background-origin {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__susy-background-origin .assert__susy-background-origin:before {
-  content: "Without Compass, background-origin is output directly.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/* - [mixin] susy-background-clip */
-.test__susy-background-clip .assert__susy-background-clip {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__susy-background-clip .assert__susy-background-clip:before {
-  content: "Without Compass, background-clip is output directly.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/*  
-
-### Box Sizing Support ------ */
-/* - [mixin] susy-box-sizing */
-.test__susy-box-sizing .assert__border-box {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__susy-box-sizing .assert__border-box .test, .test__susy-box-sizing .assert__border-box .expect {
-  width: 50%;
-  padding: 0 2em;
-}
-
-.test__susy-box-sizing .assert__border-box:before {
-  content: "Box-models are correctly output and prefixed.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/*  
-    0 Tests:
-    - 0 Passed
-    - 0 Failed */
-/*
-
-### rem Support ------ */
-.test__ .assert__ {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__ .assert__:before {
-  content: "Without compass, rem units are output unchanged.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/*
-
-### Clearfix Support ------ */
-/* - [mixin] susy-clearfix */
-.test__susy-clearfix .assert__clearfix {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__susy-clearfix .assert__clearfix .spacer {
-  float: left;
-  width: 25%;
-}
-
-.test__susy-clearfix .assert__clearfix:before {
-  content: "Elements should clear floated children.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/*  
-
-### Susy Support ------ */
-/* - [mixin] susy-support */
-.test__susy-support .assert__susy-support {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__susy-support .assert__susy-support:before {
-  content: "Recogizes properties that need special support,
-      and passes others through directly.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/*  - [function] susy-support (3 Assertions, 3 Passed, 0 Failed) */
-/*  
-    1 Tests:
-    - 1 Passed
-    - 0 Failed */
-/*
-
-### Float Container API ------ */
-/* - [mixin] float-container */
-.test__float-container .assert__float-container {
-  overflow: hidden;
-  background: rgba(204, 204, 255, 0.5);
-}
-
-.test__float-container .assert__float-container:before {
-  content: "Containers should be 30em wide, flush left.";
-  display: block;
-  padding: 0.375rem 0.75rem;
-  text-align: left;
-  font-style: italic;
-}
-
-/*
-
 ### Float Span API ------ */
 /* - [mixin] float-span-output */
 .test__float-span-output .assert__full {
@@ -2623,6 +2314,10 @@ h1 {
   font-style: italic;
 }
 
+.results {
+  background: rgba(0, 128, 0, 0.25);
+  border-color: green;
+}
 .results:after {
-  content: "57 Tests, 56 Passed, 1 Failed";
+  content: "53 Tests, 53 Passed, 0 Failed";
 }

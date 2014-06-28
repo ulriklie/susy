@@ -18,5 +18,5 @@
     margin-#{$to}: -100%,
   );
 
-  @include output($output);
+  @include render($output);
 }
