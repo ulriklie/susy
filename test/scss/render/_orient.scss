@@ -7,7 +7,7 @@
   // ----------
   @include test(map-orient) {
     $map: (
-      background-image: gradient(to _to_, red, blue),
+      background-image: gradient(to _to_, #f00, #00f),
       float: _from_,
       margin-_to_: 3em,
       directions: from _from_,
@@ -15,7 +15,7 @@
 
     $test: map-orient($map, ltr);
     $expect: (
-      background-image: gradient(to right, red, blue),
+      background-image: gradient(to right, #f00, #00f),
       float: left,
       margin-right: 3em,
       directions: from left,

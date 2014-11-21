@@ -11,7 +11,7 @@
   $layout,
   $clean: false
 ) {
-  $susy: _get-layout($layout, $clean) !global;
+  $susy: susy-get-layout($layout, $clean) !global;
 }
 
 
@@ -24,12 +24,12 @@
   $layout,
   $clean: false
 ) {
-  $old: $susy;
-  $susy: _get-layout($layout, $clean) !global;
+  $-old: $susy;
+  $susy: susy-get-layout($layout, $clean) !global;
 
   @content;
 
-  $susy: $old !global;
+  $susy: $-old !global;
 }
 
 
@@ -49,10 +49,11 @@
 // Return a new layout based on current and given settings
 // - $layout: <settings>
 // - $clean: boolean
-@function _get-layout(
+@function susy-get-layout(
   $layout,
   $clean: false
 ) {
   $layout: layout($layout);
-  @return if($clean, $layout, _susy-deep-merge($susy, $layout));
+
+  @return if($clean, $layout, susy-deep-merge($susy, $layout));
 }

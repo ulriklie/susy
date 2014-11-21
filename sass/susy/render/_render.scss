@@ -5,7 +5,7 @@
 // ------
 // Render CSS with proper browser support.
 // - $styles  : <map of css property-value pairs>
-@mixin render(
+@mixin susy-render(
   $output,
   $flow: false
 ) {

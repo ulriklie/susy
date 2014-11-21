@@ -31,5 +31,5 @@
     padding-#{$to}: $padding-after,
   );
 
-  @include render($output);
+  @include susy-render($output);
 }

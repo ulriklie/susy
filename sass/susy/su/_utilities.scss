@@ -1,0 +1,135 @@
+// Map Functions
+// =============
+
+
+// Truncate List
+// -------------
+// - Return a list, truncated to a given length
+@function susy-truncate-list(
+  $list,
+  $length
+) {
+  $-return: ();
+
+  @for $i from 1 through length($list) {
+    $-return: if($i <= $length, append($-return, nth($list, $i)), $-return);
+  }
+
+  @return $-return;
+}
+
+
+// String Replace
+// --------------
+// - Return a string, with a substring replaced
+@function susy-str-replace(
+  $string,
+  $old,
+  $new: null
+) {
+  $-return: $string;
+  $-i: str-index($string, $old);
+  $-n: str-length($old);
+
+  @if $string == $old {
+    $-return: $new;
+  } @else if $-i {
+    $-a: str-slice($string, 1, $-i - 1);
+    $-z: str-slice($string, $-i + $-n);
+    $-return: $-a + ($new or '') + $-z;
+  }
+
+  @return $-return;
+}
+
+
+// Deep Get
+// --------
+// - Return a value deep in nested maps
+@function susy-deep-get(
+  $map,
+  $keys...
+) {
+  $-return: $map;
+
+  @each $key in $keys {
+    @if type-of($-return) == map {
+      $-return: map-get($-return, $key);
+    }
+  }
+
+  @return $-return;
+}
+
+
+// Deep Set
+// --------
+// - Set a value deep in nested maps
+@function susy-deep-set(
+  $map,
+  $keys-value...
+) {
+  $-value: nth($keys-value, -1);
+  $-keys: susy-truncate-list($keys-value, length($keys-value) - 1);
+  $-length: length($-keys);
+  $-return: ();
+
+  @for $i from 1 through $-length {
+    $-n: 0 - $i;
+    $-level: susy-truncate-list($-keys, $-length + $-n);
+    $-level: susy-deep-get($map, $-level...);
+    $-merge: nth($-keys, $-n);
+    $-merge: ($-merge: $-value);
+    $-return: if($-level, map-merge($-level, $-merge), $-merge);
+    $-value: $-return;
+  }
+
+  @return $-return;
+}
+
+
+// Deep Merge
+// ----------
+// Return 2 objects of any depth, merged
+@function susy-deep-merge(
+  $map1,
+  $map2
+) {
+
+  @if type-of($map1) != map or type-of($map2) != map {
+    $map1: $map2;
+  } @else {
+    @each $key, $value in $map2 {
+      $-new: ($key: susy-deep-merge(map-get($map1, $key), $value));
+      $map1: map-merge($map1, $-new);
+    }
+  }
+
+  @return $map1;
+}
+
+
+// Deep Has-Key
+// ------------
+// - Return true if a deep key exists
+@function susy-deep-has-key(
+  $map,
+  $keys...
+) {
+  $-return: null;
+  $-stop: false;
+
+  @each $key in $keys {
+    @if not($-stop) {
+      $-return: map-has-key($map, $key);
+    }
+
+    @if $-return {
+      $map: map-get($map, $key);
+    } @else {
+      $-stop: true;
+    }
+  }
+
+  @return $-return;
+}

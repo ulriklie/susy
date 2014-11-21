@@ -18,5 +18,5 @@
     margin-#{$to}: -100%,
   );
 
-  @include render($output);
+  @include susy-render($output);
 }

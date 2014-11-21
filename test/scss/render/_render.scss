@@ -12,7 +12,7 @@
       'Property value pairs are passed in as maps and rendered as CSS.'
     ) {
       .test {
-        @include render($map);
+        @include susy-render($map);
       }
       .expect {
         @each $prop, $val in $map {

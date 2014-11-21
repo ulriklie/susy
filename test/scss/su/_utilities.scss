@@ -1,7 +1,7 @@
 // Utility Tests
 // =============
 
-@include test-module('Utility Helpers') {
+@include test-module('Utilities') {
   $map: (
     one: (
       hello: (
@@ -13,25 +13,11 @@
     two: cheese,
   );
 
-  // String Replace
-  // --------------
-  @include test('str-replace') {
-    $test: _susy-str-replace('hello terrible world!', 'terrible', 'beautiful');
-    $expect: 'hello beautiful world!';
-    @include assert-equal($test, $expect,
-      'Substring should be replaced within larger string.');
-
-    $test: _susy-str-replace('hello', 'hello', 'world');
-    $expect: 'world';
-    @include assert-equal($test, $expect,
-      'Entire string should be replaced.');
-  }
-
   // Truncate List
   // -------------
   @include test('truncate-list') {
     $list: one two three four;
-    $test: _susy-truncate-list($list, 3);
+    $test: susy-truncate-list($list, 3);
     $expect: one two three;
     @include assert-equal($test, $expect,
       'Returns a list truncated to the given length.');
@@ -40,7 +26,7 @@
   // Deep Get
   // --------
   @include test('deep-get') {
-    $test: _susy-deep-get($map, one, hello, world);
+    $test: susy-deep-get($map, one, hello, world);
     $expect: new york;
     @include assert-equal($test, $expect,
       'Returns value of deep key.');
@@ -49,7 +35,7 @@
   // Deep Set
   // --------
   @include test('deep-set') {
-    $test: _susy-deep-set($map, one, hello, pizza, yum);
+    $test: susy-deep-set($map, one, hello, pizza, yum);
     $expect: (
       one: (
         hello: (
@@ -63,7 +49,7 @@
     @include assert-equal($test, $expect,
       'Returns map with deep value adjusted.');
 
-    $test: _susy-deep-set($map, one, monkey, three, test);
+    $test: susy-deep-set($map, one, monkey, three, test);
     $expect: (
       one: (
         hello: (
@@ -81,45 +67,15 @@
       'Set deep value even in new key path.');
   }
 
-  // Deep Merge
-  // ----------
-  @include test('deep-merge') {
-    $m1: (
-      hello: (
-        world: new york,
-        monday: work,
-      ),
-      pizza: cheese,
-    );
-    $m2: (
-      hello: (
-        world: china,
-      ),
-      sunday: ice cream,
-    );
-    $test: _susy-deep-merge($m1, $m2);
-    $expect: (
-      hello: (
-        world: china,
-        monday: work,
-      ),
-      pizza: cheese,
-      sunday: ice cream,
-    );
-    @include assert-equal($test, $expect,
-      'Should merge nested maps');
-  }
-
-
   // Deep Has-Key
   // ------------
   @include test('deep-has-key') {
-    $test: _susy-deep-has-key($map, one, hello, world);
+    $test: susy-deep-has-key($map, one, hello, world);
     $expect: true;
     @include assert-equal($test, $expect,
       'Returns true for existing deep key.');
 
-    $test: _susy-deep-has-key($map, one, hello, neverland);
+    $test: susy-deep-has-key($map, one, hello, neverland);
     $expect: false;
     @include assert-equal($test, $expect,
       'Returns false for non-existing deep key.');

@@ -47,7 +47,7 @@
     ) {
       .test { @include gallery(2); }
       .expect {
-        @include render((box-sizing: border-box));
+        @include susy-render((box-sizing: border-box));
         width: 25.0%;
         float: left;
         padding-left: 1.25%;
@@ -85,7 +85,7 @@
     ) {
       .test { @include gallery(2); }
       .expect {
-        @include render((box-sizing: border-box));
+        @include susy-render((box-sizing: border-box));
         width: 33.33333%;
         float: left;
         padding-left: 2em;
@@ -185,7 +185,7 @@
     ) {
       .test { @include gallery(2); }
       .expect {
-        @include render((box-sizing: border-box));
+        @include susy-render((box-sizing: border-box));
         float: left;
         padding-left: 2.5%;
         padding-right: 2.5%;

@@ -23,7 +23,6 @@
   $prop,
   $val
 ) {
-  // Background Support
   @if $prop == background-image {
     @include susy-background-image($val);
   } @else if $prop == background-size {
@@ -32,20 +31,11 @@
     @include susy-background-origin($val);
   } @else if $prop == background-clip {
     @include susy-background-clip($val);
-  }
-
-  // Box-Sizing Support
-  @else if $prop == box-sizing {
+  } @else if $prop == box-sizing {
     @include susy-box-sizing($val);
-  }
-
-  // Clearfix
-  @else if $prop == clearfix {
+  } @else if $prop == clearfix {
     @include susy-clearfix;
-  }
-
-  // Rem Support
-  @else {
+  } @else {
     @include susy-rem($prop, $val);
   }
 }
@@ -64,26 +54,26 @@
   $requirements: (),
   $warn: true
 ) {
-  $_support: susy-get(use-custom $feature);
+  $-support: susy-get(use-custom $feature);
 
-  @if $_support {
-    $_fail: false;
+  @if $-support {
+    $-fail: false;
 
-    @each $_type, $_req in $requirements {
-      @each $_i in $_req {
-        $_pass: call(#{$_type}-exists, $_i);
+    @each $-type, $-req in $requirements {
+      @each $-i in $-req {
+        $-pass: call(#{$-type}-exists, $-i);
 
-        @if not $_pass {
-          $_fail: true;
+        @if not $-pass {
+          $-fail: true;
           @if $warn {
-            @warn "You requested custom support of #{$feature}, but the #{$_i} #{$_type} is not available.";
+            @warn "You requested custom support for #{$feature}, but the #{$-i} #{$-type} is not available.";
           }
         }
       }
     }
 
-    $_support: if($_fail, false, $_support);
+    $-support: if($-fail, false, $-support);
   }
 
-  @return $_support;
+  @return $-support;
 }

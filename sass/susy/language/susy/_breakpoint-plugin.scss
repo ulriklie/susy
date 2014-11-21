@@ -21,6 +21,6 @@
       }
     }
   } @else {
-    @warn "Susy-breakpoint requires the Breakpoint plugin (http://breakpoint-sass.com/)";
+    @warn 'Susy-breakpoint requires the Breakpoint plugin (http://breakpoint-sass.com/)';
   }
 }

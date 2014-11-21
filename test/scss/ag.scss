@@ -1,9 +1,9 @@
 // // AG tests
 // // ========
 
-@import "susy";
-@import "compass/reset";
-@import "compass";
+@import 'susy';
+@import 'compass/reset';
+@import 'compass';
 
 // Complex AG tests
 // ----------------
@@ -21,12 +21,14 @@
       &:first-of-type { @include span(2 at 1); }
       ~ .size1of5 { @include span(last 2); }
     }
+
     > .size3of5 {
       @include span(6 at 3 nest);
       > .size1of2 {
         &:first-child { @include span(3 at 1 of nested(6 at 3)); }
         + .size1of2 { @include span(last 3 of nested(6 at 3)); }
       }
+
       > .full {
         @include full(nest);
         background: none;
@@ -39,6 +41,7 @@
           @include span(first 2);
           min-height: rhythm(6.5);
         }
+
         .size2of3 {
           @include span(4 omega nest);
         }
@@ -52,6 +55,7 @@
           + .size1of2 { @include span(last 2); }
         }
       }
+
       .full {
         @include full(of nested(4 at 5));
       }
@@ -119,30 +123,34 @@ h1 {
   color: #eee;
   text-transform: uppercase;
 }
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
   clear: both;
-  padding: rhythm(.5);
   font-weight: bold;
+  padding: rhythm(.5);
 }
 
 .grid-element {
   @include trailer(.5);
-  opacity: .5;
   min-height: rhythm(3);
+  opacity: .5;
 }
 
 .size1of2 { background: #f99; }
 .size1of5 { background: #aef; }
-.size1of3 { background: orange; }
-.full.grid-element { background: pink; }
+.size1of3 { background: #f80; }
+.full.grid-element { background: #fcb; }
 
 .gallery {
   @include susy-clearfix;
   clear: both;
+
   div {
     @include trailer(.5);
+    background: rgba(#f00,.25);
     height: rhythm(1);
-    background: rgba(red,.25);
-    outline: 1px dotted red;
+    outline: 1px dotted #f00;
   }
 }

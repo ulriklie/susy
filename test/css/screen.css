@@ -171,75 +171,75 @@ h1 {
   background: rgba(68, 68, 68, 0.125);
 }
 
-/*  
-
-### Utility Helpers ------ */
-/*  - str-replace (2 Assertions, 2 Passed, 0 Failed) */
-/*  - truncate-list (1 Assertions, 1 Passed, 0 Failed) */
-/*  - deep-get (1 Assertions, 1 Passed, 0 Failed) */
-/*  - deep-set (2 Assertions, 2 Passed, 0 Failed) */
-/*  - deep-merge (1 Assertions, 1 Passed, 0 Failed) */
-/*  - deep-has-key (2 Assertions, 2 Passed, 0 Failed) */
-/*  
-    6 Tests:
-    - 6 Passed
-    - 0 Failed */
-/*  
-
-### General Settings ------ */
-/*  - susy-defaults (2 Assertions, 2 Passed, 0 Failed) */
-/*  - [mixin] susy-set (1 Assertions, 1 Passed, 0 Failed) */
-/*  - [function] susy-get (6 Assertions, 6 Passed, 0 Failed) */
-/*  
-    3 Tests:
-    - 3 Passed
-    - 0 Failed */
-/*  
-
-### Grid Validation ------ */
-/*  - [mixin] valid-columns (4 Assertions, 4 Passed, 0 Failed) */
-/*  - [mixin] valid-gutters (2 Assertions, 2 Passed, 0 Failed) */
-/*  
-    2 Tests:
-    - 2 Passed
-    - 0 Failed */
-/*  
-
-### Column Math ------ */
-/*  - [function] is-symmetrical() (3 Assertions, 3 Passed, 0 Failed) */
-/*  - [function] susy-count() (2 Assertions, 2 Passed, 0 Failed) */
-/*  - [function] susy-sum() — symmetrical (4 Assertions, 4 Passed, 0 Failed) */
-/*  - [function] susy-sum() — asymmetrical (3 Assertions, 3 Passed, 0 Failed) */
-/*  - [function] susy-slice() (3 Assertions, 3 Passed, 0 Failed) */
-/*  - [function] susy() (2 Assertions, 2 Passed, 0 Failed) */
-/*  
-    6 Tests:
-    - 6 Passed
-    - 0 Failed */
-/*  
-
-### Language Settings ------ */
-/*  - [function] parse-grid (30 Assertions, 30 Passed, 0 Failed) */
-/*  - [function] parse-span (44 Assertions, 44 Passed, 0 Failed) */
-/*  - [function] parse-gutters (11 Assertions, 11 Passed, 0 Failed) */
-/*  
-    3 Tests:
-    - 3 Passed
-    - 0 Failed */
-/*  
-
-### Grids Syntax ------ */
-/*  - [mixin] layout (7 Assertions, 7 Passed, 0 Failed) */
-/*  - [mixin] with-layout (6 Assertions, 6 Passed, 0 Failed) */
-/*  - [function] layout (1 Assertions, 1 Passed, 0 Failed) */
-/*  - [function] _get-layout (2 Assertions, 2 Passed, 0 Failed) */
-/*  
-    4 Tests:
-    - 4 Passed
-    - 0 Failed */
-/*  
-
-### Global Box-Sizing Syntax ------ */
+/* ### Utilities ---------- */
+/* - truncate-list (1 Assertions, 1 Passed, 0 Failed) */
+/* - deep-get (1 Assertions, 1 Passed, 0 Failed) */
+/* - deep-set (2 Assertions, 2 Passed, 0 Failed) */
+/* - deep-has-key (2 Assertions, 2 Passed, 0 Failed) */
+/*
+*/
+/* 4 Tests: */
+/*  - 4 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### General Settings ---------- */
+/* - susy-defaults (2 Assertions, 2 Passed, 0 Failed) */
+/*
+*/
+/* 1 Tests: */
+/*  - 1 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Grid Validation ---------- */
+/* - [mixin] valid-columns (4 Assertions, 4 Passed, 0 Failed) */
+/* - [mixin] valid-gutters (2 Assertions, 2 Passed, 0 Failed) */
+/*
+*/
+/* 2 Tests: */
+/*  - 2 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Column Math ---------- */
+/* - [function] is-symmetrical() (3 Assertions, 3 Passed, 0 Failed) */
+/* - [function] susy-count() (2 Assertions, 2 Passed, 0 Failed) */
+/* - [function] susy-sum() — symmetrical (4 Assertions, 4 Passed, 0 Failed) */
+/* - [function] susy-sum() — asymmetrical (3 Assertions, 3 Passed, 0 Failed) */
+/* - [function] susy-slice() (3 Assertions, 3 Passed, 0 Failed) */
+/* - [function] susy() (2 Assertions, 2 Passed, 0 Failed) */
+/*
+*/
+/* 6 Tests: */
+/*  - 6 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Language Settings ---------- */
+/* - [function] parse-grid (30 Assertions, 30 Passed, 0 Failed) */
+/* - [function] parse-span (44 Assertions, 44 Passed, 0 Failed) */
+/* - [function] parse-gutters (11 Assertions, 11 Passed, 0 Failed) */
+/*
+*/
+/* 3 Tests: */
+/*  - 3 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Grids Syntax ---------- */
+/* - [mixin] layout (7 Assertions, 7 Passed, 0 Failed) */
+/* - [mixin] with-layout (6 Assertions, 6 Passed, 0 Failed) */
+/* - [function] layout (1 Assertions, 1 Passed, 0 Failed) */
+/* - [function] get-layout (2 Assertions, 2 Passed, 0 Failed) */
+/*
+*/
+/* 4 Tests: */
+/*  - 4 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Global Box-Sizing Syntax ---------- */
 /* - [mixin] global-box-sizing */
 .test__global-box-sizing .assert__global-box-sizing {
   overflow: hidden;
@@ -282,23 +282,25 @@ h1 {
   font-style: italic;
 }
 
-/*  - update-box-model (2 Assertions, 2 Passed, 0 Failed) */
-/*  
-    1 Tests:
-    - 1 Passed
-    - 0 Failed */
-/*  
-
-### Shared Context Language ------ */
-/*  - [function] nested (3 Assertions, 3 Passed, 0 Failed) */
-/*  - [mixin] nested (2 Assertions, 2 Passed, 0 Failed) */
-/*  
-    2 Tests:
-    - 2 Passed
-    - 0 Failed */
-/*  
-
-### Background Syntax ------ */
+/* - update-box-model (2 Assertions, 2 Passed, 0 Failed) */
+/*
+*/
+/* 1 Tests: */
+/*  - 1 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Shared Context Language ---------- */
+/* - [function] nested (3 Assertions, 3 Passed, 0 Failed) */
+/* - [mixin] nested (2 Assertions, 2 Passed, 0 Failed) */
+/*
+*/
+/* 2 Tests: */
+/*  - 2 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Background Syntax ---------- */
 /* - [mixin] background-grid */
 .test__background-grid .assert__outside {
   background: rgba(204, 204, 255, 0.5);
@@ -377,20 +379,21 @@ h1 {
   font-style: italic;
 }
 
-/*  - [function] get-background-sym (6 Assertions, 6 Passed, 0 Failed) */
-/*  - [function] get-asym-inside (1 Assertions, 1 Passed, 0 Failed) */
-/*  - [function] get-asym-split (1 Assertions, 1 Passed, 0 Failed) */
-/*  - [function] get-asym-outside (1 Assertions, 1 Passed, 0 Failed) */
-/*  - [function] get-background-asym (2 Assertions, 2 Passed, 0 Failed) */
-/*  - [function] get-background (5 Assertions, 5 Passed, 0 Failed) */
-/*  - [function] get-debug (2 Assertions, 2 Passed, 0 Failed) */
-/*  
-    7 Tests:
-    - 7 Passed
-    - 0 Failed */
-/*  
-
-### Container Syntax ------ */
+/* - [function] get-background-sym (6 Assertions, 6 Passed, 0 Failed) */
+/* - [function] get-asym-inside (1 Assertions, 1 Passed, 0 Failed) */
+/* - [function] get-asym-split (1 Assertions, 1 Passed, 0 Failed) */
+/* - [function] get-asym-outside (1 Assertions, 1 Passed, 0 Failed) */
+/* - [function] get-background-asym (2 Assertions, 2 Passed, 0 Failed) */
+/* - [function] get-background (5 Assertions, 5 Passed, 0 Failed) */
+/* - [function] get-debug (2 Assertions, 2 Passed, 0 Failed) */
+/*
+*/
+/* 7 Tests: */
+/*  - 7 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Container Syntax ---------- */
 /* - [mixin] container */
 .test__container .assert__default-box {
   overflow: hidden;
@@ -418,15 +421,16 @@ h1 {
   font-style: italic;
 }
 
-/*  - [function] container (6 Assertions, 6 Passed, 0 Failed) */
-/*  - [function] parse-container-position() (7 Assertions, 7 Passed, 0 Failed) */
-/*  
-    2 Tests:
-    - 2 Passed
-    - 0 Failed */
-/*  
-
-### Span Syntax ------ */
+/* - [function] container (6 Assertions, 6 Passed, 0 Failed) */
+/* - [function] parse-container-position() (7 Assertions, 7 Passed, 0 Failed) */
+/*
+*/
+/* 2 Tests: */
+/*  - 2 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Span Syntax ---------- */
 /* - [mixin] span */
 .test__span .assert__default {
   max-width: 100%;
@@ -441,18 +445,18 @@ h1 {
   background-position: left top;
 }
 .test__span .assert__default:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__span .assert__default .test, .test__span .assert__default .expect {
   clear: both;
 }
 .test__span .assert__default .test:after, .test__span .assert__default .expect:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 .test__span .assert__default .test .inner, .test__span .assert__default .expect .inner {
   background: rgba(255, 255, 0, 0.25);
@@ -479,9 +483,9 @@ h1 {
   background-position: left top;
 }
 .test__span .assert__inside:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__span .assert__inside .spacer {
@@ -516,9 +520,9 @@ h1 {
   background-position: left top;
 }
 .test__span .assert__explicit:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__span .assert__explicit .test, .test__span .assert__explicit .expect {
@@ -533,17 +537,18 @@ h1 {
   font-style: italic;
 }
 
-/*  - [mixin] span (4 Assertions, 4 Passed, 0 Failed) */
-/*  - [function] span (1 Assertions, 1 Passed, 0 Failed) */
-/*  - [function] span-math (14 Assertions, 14 Passed, 0 Failed) */
-/*  - [function] get-span-width (12 Assertions, 12 Passed, 0 Failed) */
-/*  
-    4 Tests:
-    - 4 Passed
-    - 0 Failed */
-/*  
-
-### Gutter Syntax ------ */
+/* - [mixin] span (4 Assertions, 4 Passed, 0 Failed) */
+/* - [function] span (1 Assertions, 1 Passed, 0 Failed) */
+/* - [function] span-math (14 Assertions, 14 Passed, 0 Failed) */
+/* - [function] get-span-width (12 Assertions, 12 Passed, 0 Failed) */
+/*
+*/
+/* 4 Tests: */
+/*  - 4 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Gutter Syntax ---------- */
 /* - [mixin] gutters */
 .test__gutters .assert__auto {
   max-width: 100%;
@@ -558,9 +563,9 @@ h1 {
   background-position: left top;
 }
 .test__gutters .assert__auto:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__gutters .assert__auto:before {
@@ -584,9 +589,9 @@ h1 {
   background-position: left top;
 }
 .test__gutters .assert__inside-static:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__gutters .assert__inside-static:before {
@@ -610,9 +615,9 @@ h1 {
   background-position: left top;
 }
 .test__gutters .assert__explicit:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__gutters .assert__explicit:before {
@@ -623,19 +628,20 @@ h1 {
   font-style: italic;
 }
 
-/*  - [function] gutter (2 Assertions, 2 Passed, 0 Failed) */
-/*  - [function] get-gutter-width (9 Assertions, 9 Passed, 0 Failed) */
-/*  - [function] get-gutters (3 Assertions, 3 Passed, 0 Failed) */
-/*  - [function] is-inside (2 Assertions, 2 Passed, 0 Failed) */
-/*  - [function] is-split (2 Assertions, 2 Passed, 0 Failed) */
-/*  - [function] gutter-math (2 Assertions, 2 Passed, 0 Failed) */
-/*  
-    6 Tests:
-    - 6 Passed
-    - 0 Failed */
-/*  
-
-### Isolation Syntax ------ */
+/* - [function] gutter (2 Assertions, 2 Passed, 0 Failed) */
+/* - [function] get-gutter-width (9 Assertions, 9 Passed, 0 Failed) */
+/* - [function] get-gutters (3 Assertions, 3 Passed, 0 Failed) */
+/* - [function] is-inside (2 Assertions, 2 Passed, 0 Failed) */
+/* - [function] is-split (2 Assertions, 2 Passed, 0 Failed) */
+/* - [function] gutter-math (2 Assertions, 2 Passed, 0 Failed) */
+/*
+*/
+/* 6 Tests: */
+/*  - 6 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Isolation Syntax ---------- */
 /* - [mixin] isolate */
 .test__isolate .assert__isolate {
   max-width: 100%;
@@ -650,9 +656,9 @@ h1 {
   background-position: left top;
 }
 .test__isolate .assert__isolate:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__isolate .assert__isolate .test, .test__isolate .assert__isolate .expect {
@@ -670,15 +676,16 @@ h1 {
   font-style: italic;
 }
 
-/*  - [function] isolate (2 Assertions, 2 Passed, 0 Failed) */
-/*  - [function] get-isolation (4 Assertions, 4 Passed, 0 Failed) */
-/*  
-    2 Tests:
-    - 2 Passed
-    - 0 Failed */
-/*  
-
-### Gallery Syntax ------ */
+/* - [function] isolate (2 Assertions, 2 Passed, 0 Failed) */
+/* - [function] get-isolation (4 Assertions, 4 Passed, 0 Failed) */
+/*
+*/
+/* 2 Tests: */
+/*  - 2 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Gallery Syntax ---------- */
 /* - [mixin] gallery */
 .test__gallery .assert__sym {
   max-width: 100%;
@@ -693,15 +700,15 @@ h1 {
   background-position: left top;
 }
 .test__gallery .assert__sym:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__gallery .assert__sym .nest:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 .test__gallery .assert__sym .test, .test__gallery .assert__sym .expect {
   margin-bottom: 0px;
@@ -729,15 +736,15 @@ h1 {
   background-position: left top;
 }
 .test__gallery .assert__inside:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__gallery .assert__inside .nest:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 .test__gallery .assert__inside .test, .test__gallery .assert__inside .expect {
   margin-bottom: 0px;
@@ -765,15 +772,15 @@ h1 {
   background-position: left top;
 }
 .test__gallery .assert__inside-static:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__gallery .assert__inside-static .nest:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 .test__gallery .assert__inside-static .test, .test__gallery .assert__inside-static .expect {
   margin-bottom: 0px;
@@ -801,15 +808,15 @@ h1 {
   background-position: left top;
 }
 .test__gallery .assert__split:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__gallery .assert__split .nest:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 .test__gallery .assert__split .test, .test__gallery .assert__split .expect {
   margin-bottom: 0px;
@@ -836,15 +843,15 @@ h1 {
   background-position: left top;
 }
 .test__gallery .assert__asym:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__gallery .assert__asym .nest:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 .test__gallery .assert__asym .test, .test__gallery .assert__asym .expect {
   margin-bottom: 0px;
@@ -871,15 +878,15 @@ h1 {
   background-position: left top;
 }
 .test__gallery .assert__asym-inside:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__gallery .assert__asym-inside .nest:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 .test__gallery .assert__asym-inside .test, .test__gallery .assert__asym-inside .expect {
   margin-bottom: 0px;
@@ -894,13 +901,14 @@ h1 {
   font-style: italic;
 }
 
-/*  
-    0 Tests:
-    - 0 Passed
-    - 0 Failed */
-/*  
-
-### Row Syntax ------ */
+/*
+*/
+/* 0 Tests: */
+/*  - 0 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### Row Syntax ---------- */
 /* - [mixin] break */
 .test__break .assert__break {
   max-width: 100%;
@@ -915,9 +923,9 @@ h1 {
   background-position: left top;
 }
 .test__break .assert__break:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__break .assert__break .spacer {
@@ -952,9 +960,9 @@ h1 {
   background-position: left top;
 }
 .test__nobreak .assert__nobreak:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__nobreak .assert__nobreak .spacer {
@@ -992,9 +1000,9 @@ h1 {
   background-position: left top;
 }
 .test__full .assert__split:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__full .assert__split .spacer {
@@ -1025,9 +1033,9 @@ h1 {
   background-position: left top;
 }
 .test__full .assert__after:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__full .assert__after .spacer {
@@ -1058,9 +1066,9 @@ h1 {
   background-position: left top;
 }
 .test__first .assert__before:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__first .assert__before .test, .test__first .assert__before .expect {
@@ -1091,9 +1099,9 @@ h1 {
   background-position: left top;
 }
 .test__first .assert__split:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__first .assert__split .test, .test__first .assert__split .expect {
@@ -1126,9 +1134,9 @@ h1 {
   background-position: left top;
 }
 .test__alpha .assert__alpha:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__alpha .assert__alpha .test, .test__alpha .assert__alpha .expect {
@@ -1160,9 +1168,9 @@ h1 {
   background-position: left top;
 }
 .test__last .assert__after:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__last .assert__after .test, .test__last .assert__after .expect {
@@ -1193,9 +1201,9 @@ h1 {
   background-position: left top;
 }
 .test__last .assert__split:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__last .assert__split .test, .test__last .assert__split .expect {
@@ -1228,9 +1236,9 @@ h1 {
   background-position: left top;
 }
 .test__omega .assert__omega:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__omega .assert__omega .test, .test__omega .assert__omega .expect {
@@ -1248,12 +1256,15 @@ h1 {
   font-style: italic;
 }
 
-/*  - [function] get-edge (6 Assertions, 6 Passed, 0 Failed) */
-/*  - [function] get-location (4 Assertions, 4 Passed, 0 Failed) */
-/*  
-    2 Tests:
-    - 2 Passed
-    - 0 Failed */
+/* - [function] get-edge (6 Assertions, 6 Passed, 0 Failed) */
+/* - [function] get-location (4 Assertions, 4 Passed, 0 Failed) */
+/*
+*/
+/* 2 Tests: */
+/*  - 2 Passed */
+/*  - 0 Failed */
+/*
+*/
 /*
 
 ### Margin Syntax ------ */
@@ -1271,9 +1282,9 @@ h1 {
   background-position: left top;
 }
 .test__pre .assert__wide:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__pre .assert__wide .spacer {
@@ -1308,9 +1319,9 @@ h1 {
   background-position: left top;
 }
 .test__pre .assert__split:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__pre .assert__split .test, .test__pre .assert__split .expect {
@@ -1341,9 +1352,9 @@ h1 {
   background-position: left top;
 }
 .test__pre .assert__wider:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__pre .assert__wider .spacer {
@@ -1378,9 +1389,9 @@ h1 {
   background-position: left top;
 }
 .test__post .assert__wide:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__post .assert__wide:before {
@@ -1403,9 +1414,9 @@ h1 {
   background-position: left top;
 }
 .test__post .assert__split:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__post .assert__split .test, .test__post .assert__split .expect {
@@ -1433,9 +1444,9 @@ h1 {
   background-position: left top;
 }
 .test__post .assert__wider:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__post .assert__wider .spacer {
@@ -1472,9 +1483,9 @@ h1 {
   background-position: left top;
 }
 .test__push .assert__push:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__push .assert__push .test, .test__push .assert__push .expect {
@@ -1505,9 +1516,9 @@ h1 {
   background-position: left top;
 }
 .test__pull .assert__narrow:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__pull .assert__narrow .spacer {
@@ -1542,9 +1553,9 @@ h1 {
   background-position: left top;
 }
 .test__pull .assert__split:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__pull .assert__split .spacer {
@@ -1580,9 +1591,9 @@ h1 {
   background-position: left top;
 }
 .test__pull .assert__wide:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__pull .assert__wide .spacer {
@@ -1616,9 +1627,9 @@ h1 {
   background-position: left top;
 }
 .test__pull .assert__wider:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__pull .assert__wider .spacer {
@@ -1653,9 +1664,9 @@ h1 {
   background-position: left top;
 }
 .test__squish .assert__simple:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__squish .assert__simple:before {
@@ -1678,9 +1689,9 @@ h1 {
   background-position: left top;
 }
 .test__squish .assert__split:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__squish .assert__split:before {
@@ -1704,9 +1715,9 @@ h1 {
   background-position: left top;
 }
 .test__squish .assert__nested:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__squish .assert__nested .nest {
@@ -1739,9 +1750,9 @@ h1 {
   background-position: left top;
 }
 .test__prefix .assert__wide:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__prefix .assert__wide:before {
@@ -1765,9 +1776,9 @@ h1 {
   background-position: left top;
 }
 .test__prefix .assert__wider:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__prefix .assert__wider .spacer {
@@ -1799,9 +1810,9 @@ h1 {
   background-position: left top;
 }
 .test__suffix .assert__wide:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__suffix .assert__wide:before {
@@ -1824,9 +1835,9 @@ h1 {
   background-position: left top;
 }
 .test__suffix .assert__wider:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__suffix .assert__wider .spacer {
@@ -1859,9 +1870,9 @@ h1 {
   background-position: left top;
 }
 .test__pad .assert__simple:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__pad .assert__simple:before {
@@ -1885,9 +1896,9 @@ h1 {
   background-position: left top;
 }
 .test__pad .assert__nested:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__pad .assert__nested .nest {
@@ -1916,9 +1927,9 @@ h1 {
   background-position: left top;
 }
 .test__pad .assert__inside:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__pad .assert__inside:before {
@@ -1942,9 +1953,9 @@ h1 {
   background-position: left top;
 }
 .test__pad .assert__inside-nogutters:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__pad .assert__inside-nogutters:before {
@@ -1955,9 +1966,7 @@ h1 {
   font-style: italic;
 }
 
-/*  
-
-### Bleed Syntax ------ */
+/* ### Bleed Syntax ---------- */
 /* - [mixin] bleed */
 .test__bleed .assert__simple {
   max-width: 100%;
@@ -1972,9 +1981,9 @@ h1 {
   background-position: left top;
 }
 .test__bleed .assert__simple:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__bleed .assert__simple .nest {
@@ -2003,9 +2012,9 @@ h1 {
   background-position: left top;
 }
 .test__bleed .assert__inside:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__bleed .assert__inside .nest {
@@ -2038,9 +2047,9 @@ h1 {
   background-position: left top;
 }
 .test__bleed .assert__split:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__bleed .assert__split .nest {
@@ -2070,9 +2079,9 @@ h1 {
   background-position: left top;
 }
 .test__bleed-x .assert__simple:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__bleed-x .assert__simple .nest {
@@ -2101,9 +2110,9 @@ h1 {
   background-position: left top;
 }
 .test__bleed-x .assert__inside:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__bleed-x .assert__inside .nest {
@@ -2133,9 +2142,9 @@ h1 {
   background-position: left top;
 }
 .test__bleed-y .assert__simple:after {
-  content: " ";
-  display: block;
   clear: both;
+  content: ' ';
+  display: block;
 }
 
 .test__bleed-y .assert__simple .nest {
@@ -2155,20 +2164,24 @@ h1 {
   font-style: italic;
 }
 
-/*  - [function] get-bleed (3 Assertions, 3 Passed, 0 Failed) */
-/*  - [function] bleed-shorthand (2 Assertions, 2 Passed, 0 Failed) */
-/*  
-    2 Tests:
-    - 2 Passed
-    - 0 Failed */
-/*  
-
-### breakpoint integration ------ */
-/*  - [mixin] susy-breakpoint (2 Assertions, 2 Passed, 0 Failed) */
-/*  
-    1 Tests:
-    - 1 Passed
-    - 0 Failed */
+/* - [function] get-bleed (3 Assertions, 3 Passed, 0 Failed) */
+/* - [function] bleed-shorthand (2 Assertions, 2 Passed, 0 Failed) */
+/*
+*/
+/* 2 Tests: */
+/*  - 2 Passed */
+/*  - 0 Failed */
+/*
+*/
+/* ### breakpoint integration ---------- */
+/* - [mixin] susy-breakpoint (2 Assertions, 2 Passed, 0 Failed) */
+/*
+*/
+/* 1 Tests: */
+/*  - 1 Passed */
+/*  - 0 Failed */
+/*
+*/
 /*
 
 ### Float Span API ------ */
@@ -2314,10 +2327,204 @@ h1 {
   font-style: italic;
 }
 
+/* ### Direction Helpers ---------- */
+/* - map-orient (1 Assertions, 1 Passed, 0 Failed) */
+/* - orient (1 Assertions, 1 Passed, 0 Failed) */
+/* - [function] get-direction (2 Assertions, 2 Passed, 0 Failed) */
+/* - [function] to (2 Assertions, 2 Passed, 0 Failed) */
+/* - [function] from (2 Assertions, 2 Passed, 0 Failed) */
+/*
+*/
+/* 5 Tests: */
+/*  - 5 Passed */
+/*  - 0 Failed */
+/*
+*/
+/*
+
+### Prefix Support ------ */
+/* - [mixin] susy-prefix */
+.test__susy-prefix .assert__susy-prefix {
+  overflow: hidden;
+  background: rgba(204, 204, 255, 0.5);
+}
+
+.test__susy-prefix .assert__susy-prefix:before {
+  content: "Requested prefixes are added to output.";
+  display: block;
+  padding: 0.375rem 0.75rem;
+  text-align: left;
+  font-style: italic;
+}
+
+/*
+
+### Background Support ------ */
+/* - [mixin] susy-background-image */
+.test__susy-background-image .assert__susy-background-image {
+  overflow: hidden;
+  background: rgba(204, 204, 255, 0.5);
+}
+
+.test__susy-background-image .assert__susy-background-image:before {
+  content: "Without Compass, background-image is output directly.";
+  display: block;
+  padding: 0.375rem 0.75rem;
+  text-align: left;
+  font-style: italic;
+}
+
+/* - [mixin] susy-background-size */
+.test__susy-background-size .assert__susy-background-size {
+  overflow: hidden;
+  background: rgba(204, 204, 255, 0.5);
+}
+
+.test__susy-background-size .assert__susy-background-size:before {
+  content: "Without Compass, background-size is output directly.";
+  display: block;
+  padding: 0.375rem 0.75rem;
+  text-align: left;
+  font-style: italic;
+}
+
+/* - [mixin] susy-background-origin */
+.test__susy-background-origin .assert__susy-background-origin {
+  overflow: hidden;
+  background: rgba(204, 204, 255, 0.5);
+}
+
+.test__susy-background-origin .assert__susy-background-origin:before {
+  content: "Without Compass, background-origin is output directly.";
+  display: block;
+  padding: 0.375rem 0.75rem;
+  text-align: left;
+  font-style: italic;
+}
+
+/* - [mixin] susy-background-clip */
+.test__susy-background-clip .assert__susy-background-clip {
+  overflow: hidden;
+  background: rgba(204, 204, 255, 0.5);
+}
+
+.test__susy-background-clip .assert__susy-background-clip:before {
+  content: "Without Compass, background-clip is output directly.";
+  display: block;
+  padding: 0.375rem 0.75rem;
+  text-align: left;
+  font-style: italic;
+}
+
+/* ### Box Sizing Support ---------- */
+/* - [mixin] susy-box-sizing */
+.test__susy-box-sizing .assert__border-box {
+  overflow: hidden;
+  background: rgba(204, 204, 255, 0.5);
+}
+
+.test__susy-box-sizing .assert__border-box .test, .test__susy-box-sizing .assert__border-box .expect {
+  width: 50%;
+  padding: 0 2em;
+}
+
+.test__susy-box-sizing .assert__border-box:before {
+  content: "Box-models are correctly output and prefixed.";
+  display: block;
+  padding: 0.375rem 0.75rem;
+  text-align: left;
+  font-style: italic;
+}
+
+/*
+*/
+/* 0 Tests: */
+/*  - 0 Passed */
+/*  - 0 Failed */
+/*
+*/
+/*
+
+### rem Support ------ */
+.test__ .assert__ {
+  overflow: hidden;
+  background: rgba(204, 204, 255, 0.5);
+}
+
+.test__ .assert__:before {
+  content: "Without compass, rem units are output unchanged.";
+  display: block;
+  padding: 0.375rem 0.75rem;
+  text-align: left;
+  font-style: italic;
+}
+
+/*
+
+### Clearfix Support ------ */
+/* - [mixin] susy-clearfix */
+.test__susy-clearfix .assert__clearfix {
+  overflow: hidden;
+  background: rgba(204, 204, 255, 0.5);
+}
+
+.test__susy-clearfix .assert__clearfix .spacer {
+  float: left;
+  width: 25%;
+}
+
+.test__susy-clearfix .assert__clearfix:before {
+  content: "Elements should clear floated children.";
+  display: block;
+  padding: 0.375rem 0.75rem;
+  text-align: left;
+  font-style: italic;
+}
+
+/* ### Susy Support ---------- */
+/* - [mixin] susy-support */
+.test__susy-support .assert__susy-support {
+  overflow: hidden;
+  background: rgba(204, 204, 255, 0.5);
+}
+
+.test__susy-support .assert__susy-support:before {
+  content: "Recogizes properties that need special support,\a       and passes others through directly.";
+  display: block;
+  padding: 0.375rem 0.75rem;
+  text-align: left;
+  font-style: italic;
+}
+
+/* - [function] susy-support (3 Assertions, 3 Passed, 0 Failed) */
+/*
+*/
+/* 1 Tests: */
+/*  - 1 Passed */
+/*  - 0 Failed */
+/*
+*/
+/*
+
+### render ------ */
+/* - [mixin] render */
+.test__render .assert__render {
+  overflow: hidden;
+  background: rgba(204, 204, 255, 0.5);
+}
+
+.test__render .assert__render:before {
+  content: "Property value pairs are passed in as maps and rendered as CSS.";
+  display: block;
+  padding: 0.375rem 0.75rem;
+  text-align: left;
+  font-style: italic;
+}
+
 .results {
-  background: rgba(0, 128, 0, 0.25);
-  border-color: green;
+  background: rgba(0, 136, 0, 0.25);
+  border-color: #080;
 }
 .results:after {
-  content: "53 Tests, 53 Passed, 0 Failed";
+  content: "55 Tests, 55 Passed, 0 Failed";
 }

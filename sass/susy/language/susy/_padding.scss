@@ -10,19 +10,19 @@
   $span
 ) {
   $span: map-merge((spread: wide), parse-span($span));
-  $_flow: susy-get(flow, $span);
-  $_width: span($span);
+  $-flow: susy-get(flow, $span);
+  $-width: span($span);
 
   @if is-inside($span) {
-    $_gutter: gutter($span);
-    $_width: if($_gutter and comparable($_width, $_gutter), $_width + $_gutter, $_width);
+    $-gutter: gutter($span);
+    $-width: if($-gutter and comparable($-width, $-gutter), $-width + $-gutter, $-width);
   }
 
-  $_output: (
-    padding-_from_: $_width,
+  $-output: (
+    padding-_from_: $-width,
   );
 
-  @include render($_output, $_flow);
+  @include susy-render($-output, $-flow);
 }
 
 
@@ -34,19 +34,19 @@
   $span
 ) {
   $span: map-merge((spread: wide), parse-span($span));
-  $_flow: susy-get(flow, $span);
-  $_width: span($span);
+  $-flow: susy-get(flow, $span);
+  $-width: span($span);
 
   @if is-inside($span) {
-    $_gutter: gutter($span);
-    $_width: if($_gutter and comparable($_width, $_gutter), $_width + $_gutter, $_width);
+    $-gutter: gutter($span);
+    $-width: if($-gutter and comparable($-width, $-gutter), $-width + $-gutter, $-width);
   }
 
-  $_output: (
-    padding-_to_: $_width,
+  $-output: (
+    padding-_to_: $-width,
   );
 
-  @include render($_output, $_flow);
+  @include susy-render($-output, $-flow);
 }
 
 
@@ -64,10 +64,10 @@
   @if $post {
     $post: map-merge((spread: wide), parse-span($post));
   } @else {
-    $span: susy-get(span, $pre);
-    @if length($span) > 1 {
-      $pre: map-merge($pre, (span: nth($span, 1)));
-      $post: map-merge($pre, (span: nth($span, 2)));
+    $-span: susy-get(span, $pre);
+    @if length($-span) > 1 {
+      $pre: map-merge($pre, (span: nth($-span, 1)));
+      $post: map-merge($pre, (span: nth($-span, 2)));
     } @else {
       $post: $pre;
     }

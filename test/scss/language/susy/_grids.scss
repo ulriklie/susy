@@ -79,12 +79,12 @@
       'Returns a parsed grid map based on shorthand syntax');
   }
 
-  // [function] _get-layout
+  // [function] get-layout
   // ----------------------
 
-  @include test('[function] _get-layout') {
+  @include test('[function] get-layout') {
     @include with-layout(show-baseline, clean) {
-      $test: _get-layout(overlay);
+      $test: susy-get-layout(overlay);
       $expect: (
         debug: (
           image: show-baseline,
@@ -94,7 +94,7 @@
       @include assert-equal($test, $expect,
         'Returns layout merged with global settings');
 
-      $test: _get-layout(overlay, clean);
+      $test: susy-get-layout(overlay, clean);
       $expect: (
         debug: (output: overlay)
       );

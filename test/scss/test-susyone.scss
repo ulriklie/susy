@@ -1,14 +1,14 @@
-/* Susy Tests */
-/* ========== */
+// Susy Tests
+// ==========
 
-@import "susyone";
-@import "true";
+@import 'susyone';
+@import 'true';
 
 // Test
 // ----
 
 $default-module-output: css;
 
-@import "language/susyone";
+@import 'language/susyone';
 
 @include report;

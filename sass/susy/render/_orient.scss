@@ -40,8 +40,8 @@
   $from: from($flow);
 
   @if type-of($value) == string {
-    $value: _susy-str-replace($value, _from_, $from);
-    $value: _susy-str-replace($value, _to_, $to);
+    $value: susy-str-replace($value, _from_, $from);
+    $value: susy-str-replace($value, _to_, $to);
   } @else if type-of($value) == list {
     $new: ();
     $sep: list-separator($value);
